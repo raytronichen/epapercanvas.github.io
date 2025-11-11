@@ -8,7 +8,7 @@ title: About
   
   <p>This website is currently operated by Ray Chen.</p>
   
-  <p>Ray Chen is the founder of InkJoy Frame Color ePaper Frame and the inventor of e-ink computer monitors (co-founder & former CTO of DASUNG Technology). He has been focusing on the innovation and application of e-ink display technology since 2013, committed to bringing this eye-friendly technology to more users. As the inventor of e-ink computer monitors, he promoted the application of e-ink display technology in the computer field during his time at DASUNG Technology. Now, he founded InkJoy Frame, focusing on developing color e-ink frame products, combining art and technology perfectly.</p>
+  <p>I'm the founder of InkJoy Frame Color ePaper Frame and the inventor of e-ink computer monitors (co-founder & former CTO of DASUNG Technology). I have been focusing on the innovation and application of e-ink display technology since 2013, committed to bringing this eye-friendly technology to more users. As the inventor of e-ink computer monitors, I promoted the application of e-ink display technology in the computer field during my time at DASUNG Technology. Now, I founded InkJoy Frame, focusing on developing color e-ink frame products, combining art and technology perfectly.</p>
   
   <h2>About This Blog</h2>
   

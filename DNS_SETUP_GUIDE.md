@@ -19,44 +19,101 @@
 
 在你的域名注册商（如阿里云、腾讯云、GoDaddy、Namecheap 等）的 DNS 管理中添加以下记录：
 
-#### 对于 www.einkframe.com（带 www）
+#### 方案 A：只配置 www.einkframe.com（推荐，最简单）
 
-**CNAME 记录：**
+这是最简单的配置方式，只需要添加一条 CNAME 记录。
+
+**在 DNS 中添加 CNAME 记录：**
 ```
 类型: CNAME
 主机记录/名称: www
 记录值/指向: raytronichen.github.io
-TTL: 3600 (或默认值)
+TTL: Auto (或 3600)
+Proxy status: DNS only (灰色云，关闭代理) [仅 Cloudflare 需要]
 ```
 
-#### 对于 einkframe.com（不带 www，可选）
+**配置说明：**
+- ✅ 只需要一条记录，配置简单
+- ✅ 不需要配置 IP 地址
+- ✅ GitHub 会自动处理负载均衡
+- ⚠️ 只支持 `www.einkframe.com`，不支持 `einkframe.com`（不带 www）
 
-如果你想同时支持 `einkframe.com`（不带 www），需要添加 **A 记录**：
+**如果使用 Cloudflare：**
+- **Proxy status 必须关闭**（选择 "DNS only"，显示为灰色云 ☁️）
+- **不要开启**（橙色云 🟠）
+- 原因：GitHub Pages 需要直接访问才能正确配置 SSL 证书
+- 如果开启代理，可能导致 SSL 证书配置失败
+
+**配置步骤（以 Cloudflare 为例）：**
+1. 登录 Cloudflare
+2. 选择域名 `einkframe.com`
+3. 进入 **DNS → Records**
+4. 点击 **Add record**
+5. 填写：
+   - Type: `CNAME`
+   - Name: `www`
+   - Target: `raytronichen.github.io`
+   - Proxy status: 点击云朵图标，选择 **DNS only**（灰色云）
+   - TTL: `Auto`
+6. 点击 **Save**
+
+**其他 DNS 服务商：**
+- 阿里云/腾讯云：添加 CNAME 记录，主机记录填 `www`，记录值填 `raytronichen.github.io`
+- GoDaddy/Namecheap：添加 CNAME 记录，Name 填 `www`，Value 填 `raytronichen.github.io`
+
+#### 方案 B：同时支持 www.einkframe.com 和 einkframe.com（可选）
+
+如果你想同时支持 `www.einkframe.com` 和 `einkframe.com`（不带 www），需要同时配置 CNAME 和 A 记录。
+
+**配置步骤：**
+
+**1. 首先配置 CNAME 记录（www）：**
+```
+类型: CNAME
+主机记录/名称: www
+记录值/指向: raytronichen.github.io
+TTL: Auto (或 3600)
+Proxy status: DNS only (灰色云，关闭代理)
+```
+
+**2. 然后配置 A 记录（根域名）：**
+
+**为什么需要 4 个 IP？**
+- GitHub Pages 使用多个 IP 地址进行负载均衡
+- 这样可以提高可用性和性能
+- 如果某个 IP 不可用，其他 IP 可以继续服务
+- 根域名（不带 www）不能使用 CNAME，必须使用 A 记录指向 IP
 
 **A 记录（需要添加 4 条）：**
 ```
 类型: A
 主机记录/名称: @ (或留空，表示根域名)
 记录值: 185.199.108.153
-TTL: 3600
+TTL: Auto (或 3600)
+Proxy status: DNS only (灰色云，关闭代理)
 
 类型: A
 主机记录/名称: @
 记录值: 185.199.109.153
-TTL: 3600
+TTL: Auto (或 3600)
+Proxy status: DNS only
 
 类型: A
 主机记录/名称: @
 记录值: 185.199.110.153
-TTL: 3600
+TTL: Auto (或 3600)
+Proxy status: DNS only
 
 类型: A
 主机记录/名称: @
 记录值: 185.199.111.153
-TTL: 3600
+TTL: Auto (或 3600)
+Proxy status: DNS only
 ```
 
-**注意：** GitHub Pages 的 IP 地址可能会变化，建议定期检查。
+**注意：** 
+- GitHub Pages 的 IP 地址可能会变化，建议定期检查
+- 如果只配置 `www.einkframe.com`（使用 CNAME），则不需要配置这些 A 记录
 
 ### 步骤 3: 在 GitHub Pages 中添加两个域名（如果支持不带 www）
 
@@ -76,13 +133,39 @@ TTL: 3600
 - GitHub 会自动为自定义域名配置 SSL 证书
 - 可能需要几小时到一天时间
 
+### Cloudflare 特殊配置说明
+
+如果你使用 Cloudflare 作为 DNS 服务商：
+
+1. **Proxy Status（代理状态）**：
+   - **必须关闭**（选择 "DNS only"，显示为灰色云 ☁️）
+   - **不要开启**（橙色云 🟠）
+   - 原因：GitHub Pages 需要直接访问才能自动配置 SSL 证书
+   - 如果开启代理，GitHub 无法验证域名所有权，SSL 证书会配置失败
+
+2. **TTL 设置**：
+   - **Auto 是可以的**，Cloudflare 会自动管理
+   - 也可以设置为固定值如 3600（1小时）
+   - Auto 模式会根据访问频率自动调整
+
+3. **配置步骤**：
+   - 登录 Cloudflare
+   - 选择你的域名 `einkframe.com`
+   - 进入 DNS → Records
+   - 添加 CNAME 记录：
+     - Type: CNAME
+     - Name: www
+     - Target: raytronichen.github.io
+     - Proxy status: DNS only (灰色云)
+     - TTL: Auto
+
 ### 常见域名注册商的 DNS 设置位置
 
 - **阿里云**: 控制台 → 域名 → 解析设置
 - **腾讯云**: 控制台 → 域名注册 → 我的域名 → 解析
 - **GoDaddy**: My Products → Domains → DNS
 - **Namecheap**: Domain List → Manage → Advanced DNS
-- **Cloudflare**: DNS → Records
+- **Cloudflare**: DNS → Records（注意关闭 Proxy）
 
 ### 验证 DNS 配置
 

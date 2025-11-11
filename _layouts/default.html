@@ -9,7 +9,7 @@
   
   <!-- SEO Meta Tags -->
   <meta name="author" content="{{ site.author }}">
-  <meta name="keywords" content="{% if page.tags %}{{ page.tags | join: ', ' }}{% else %}技术博客, 产品设计, 技术文章{% endif %}">
+  <meta name="keywords" content="{% if page.tags %}{{ page.tags | join: ', ' }}, {% endif %}{{ site.keywords | default: 'eink, epaper, epaper frame, eink frame, epaper frames, eink frames, eink canvas, epaper canvas, epaper photo frame, eink photo frame, inkjoy, inkjoy frame' }}">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
   
   <!-- Open Graph / Facebook -->
@@ -37,6 +37,7 @@
     "name": {{ site.title | jsonify }},
     "url": "{{ site.url }}",
     "description": {{ site.description | jsonify }},
+    "keywords": {{ site.keywords | default: 'eink, epaper, epaper frame, eink frame, epaper frames, eink frames, eink canvas, epaper canvas, epaper photo frame, eink photo frame, inkjoy, inkjoy frame' | jsonify }},
     "author": {
       "@type": "Person",
       "name": {{ site.author | jsonify }}

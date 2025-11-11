@@ -19,3 +19,5 @@ Each color pixel is about 127x127 µm, composed of microcups filled with charged
 
 ![InkJoy logo pixel view](/pics/InkJoy_logo_pixel.png)
 
+
+

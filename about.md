@@ -8,7 +8,7 @@ title: About
   
   <h2>Introduction</h2>
   
-  <p><strong>Founder of InkJoy Frame Color E-ink Frame</strong></p>
+  <p><strong>Founder of InkJoy Frame Color ePaper Frame</strong></p>
   
   <p><strong>Inventor of E-ink Computer Monitor (Co-founder & Former CTO of DASUNG Technology)</strong></p>
   

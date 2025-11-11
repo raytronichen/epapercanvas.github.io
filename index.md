@@ -9,6 +9,11 @@ title: Home
     <p class="site-description">{{ site.description }}</p>
   </div>
 
+  <div class="intro-section">
+    <p class="intro-text">To blend ePaper into everyday life — calm, reflective, and energy-efficient — like a piece of living artwork that never demands attention.</p>
+    <img src="/pics/main.jpeg" alt="ePaper Frame" class="intro-image">
+  </div>
+
   <div class="posts">
     <h2 class="posts-title">Latest Posts</h2>
     <ul class="post-list">

@@ -2,6 +2,7 @@
 layout: post
 title: From the Fastest to the Stillest — My Journey from E Ink Monitor to ePaper Frame
 date: 2025-11-11
+permalink: /2025/11/11/welcome/
 tags: [blog, introduction]
 ---
 

@@ -5,6 +5,7 @@ date: 2025-11-13
 lang: zh
 ref: spectra-6-color-limitations
 permalink: /2025/11/13/spectra-6-color-limitations-zh/
+category: tech
 tags: [电子纸, Spectra 6, 色彩, 摄影, Reddit]
 ---
 

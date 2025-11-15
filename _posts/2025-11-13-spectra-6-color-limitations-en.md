@@ -5,6 +5,7 @@ date: 2025-11-13
 lang: en
 ref: spectra-6-color-limitations
 permalink: /2025/11/13/spectra-6-color-limitations/
+category: tech
 tags: [E-ink, Spectra 6, color, photography, Reddit]
 ---
 

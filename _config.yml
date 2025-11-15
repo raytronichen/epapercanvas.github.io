@@ -13,6 +13,23 @@ lang_names:
   en: English
   zh: 中文
 
+# Site sections/categories
+sections:
+  tech:
+    name: Tech
+    name_zh: 技术
+    url: /tech
+    domain: www.einkframe.com
+    description: Technology insights and technical discussions about ePaper displays
+    description_zh: 关于电子纸显示技术的技术见解和讨论
+  product:
+    name: Product
+    name_zh: 产品
+    url: /product
+    domain: www.epapercanvas.com
+    description: Product features, updates, and user stories
+    description_zh: 产品功能、更新和用户故事
+
 # SEO Keywords
 keywords: eink, epaper, epaper frame, eink frame, epaper frames, eink frames, eink canvas, epaper canvas, epaper photo frame, eink photo frame, inkjoy, inkjoy frame
 
@@ -31,6 +48,9 @@ navigation:
     url: /
   - title: 关于
     url: /about
+
+# Default category (for backward compatibility)
+default_category: tech
 
 # Social links
 social:

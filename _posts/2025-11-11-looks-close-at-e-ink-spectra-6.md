@@ -5,6 +5,7 @@ date: 2025-11-11
 lang: en
 ref: looks-close-at-e-ink-spectra-6
 permalink: /2025/11/11/looks-close-at-e-ink-spectra-6/
+category: tech
 tags: [E-ink, Spectra 6, tech]
 ---
 

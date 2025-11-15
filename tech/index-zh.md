@@ -1,17 +1,18 @@
 ---
 layout: default
 lang: zh
-permalink: /zh/
+category: tech
+permalink: /tech/zh/
 ---
 
 <div class="home">
   <div class="hero">
     <p class="intro-text">
-      科技与静谧相遇<br>
-      平静、沉思、节能 —<br>
-      由电子纸静静驱动的活艺术品。
+      技术见解和技术讨论<br>
+      探索电子纸显示技术的深度<br>
+      从 Spectra™ 6 到色彩校准算法。
     </p>
-    <img src="/pics/main.jpeg" alt="ePaper Frame" class="intro-image">
+    <img src="/pics/main.jpeg" alt="电子纸技术" class="intro-image">
   </div>
 
   <div class="posts">
@@ -41,8 +42,14 @@ permalink: /zh/
 
   {% if filtered_posts.size == 0 %}
   <div class="empty-state">
-    <p>还没有文章，敬请期待！</p>
+    <p>还没有技术文章，敬请期待！</p>
   </div>
   {% endif %}
+
+  <div class="section-links" style="margin-top: 40px; padding-top: 40px; border-top: 1px solid #e8e8e8;">
+    <p style="text-align: center; color: #666;">
+      也可以查看我们的 <a href="https://www.epapercanvas.com/zh/" style="color: #0066cc;" target="_blank">产品栏目</a>
+    </p>
+  </div>
 </div>
 

@@ -1,21 +1,22 @@
 ---
 layout: default
 lang: en
-permalink: /
+category: tech
+permalink: /tech/
 ---
 
 <div class="home">
   <div class="hero">
-    <p class="intro-text" data-en="Where technology meets stillness<br>Calm, reflective, and energy-efficient —<br>a piece of living artwork quietly powered by ePaper." data-zh="科技与静谧相遇<br>平静、沉思、节能 —<br>由电子纸静静驱动的活艺术品。">
-      Where technology meets stillness<br>
-      Calm, reflective, and energy-efficient —<br>
-      a piece of living artwork quietly powered by ePaper.
+    <p class="intro-text">
+      Technology insights and technical discussions<br>
+      Exploring the depths of ePaper display technology<br>
+      From Spectra™ 6 to color calibration algorithms.
     </p>
-    <img src="/pics/main.jpeg" alt="ePaper Frame" class="intro-image">
+    <img src="/pics/main.jpeg" alt="ePaper Technology" class="intro-image">
   </div>
 
   <div class="posts">
-    <h2 class="posts-title" data-en="Latest Posts" data-zh="最新文章">Latest Tech Posts</h2>
+    <h2 class="posts-title">Latest Tech Posts</h2>
     <ul class="post-list">
       {% assign current_lang = page.lang | default: site.default_lang %}
       {% assign filtered_posts = site.posts | where: "lang", current_lang | where_exp: "post", "post.category == 'tech' or post.category contains 'tech' or post.categories contains 'tech'" | sort: "date" | reverse %}
@@ -48,8 +49,14 @@ permalink: /
 
   {% if filtered_posts.size == 0 %}
   <div class="empty-state">
-    <p data-en="No posts yet. Stay tuned!" data-zh="还没有文章，敬请期待！">No posts yet. Stay tuned!</p>
+    <p>No tech posts yet. Stay tuned!</p>
   </div>
   {% endif %}
+
+  <div class="section-links" style="margin-top: 40px; padding-top: 40px; border-top: 1px solid #e8e8e8;">
+    <p style="text-align: center; color: #666;">
+      Also check out our <a href="https://www.epapercanvas.com/" style="color: #0066cc;" target="_blank">Product section</a>
+    </p>
+  </div>
 </div>
 

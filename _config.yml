@@ -1,9 +1,9 @@
 # Site settings
-title: ePaper Frame â€” The Story Behind Color Eink Frame
-description: Explore the journey of InkJoy and its mission to create the most beautiful full-color ePaper frame. From Spectraâ„¢ 6 technology to color calibration, discover how ePaper display evolves beyond limits.
+title: ePaper Canvas â€?Product Stories and Updates â€?The Story Behind Color Eink Frame
+description: Discover product features, updates, and user stories of InkJoy and its mission to create the most beautiful full-color ePaper frame. From Spectraâ„?6 technology to color calibration, discover how ePaper display evolves beyond limits.
 author: Raytronics
 email: your-email@example.com
-url: https://www.einkframe.com
+url: https://www.epapercanvas.com
 baseurl: ""
 
 # Language settings
@@ -17,7 +17,7 @@ lang_names:
 sections:
   tech:
     name: Tech
-    name_zh: æŠ€æœ¯
+    name_zh: æŠ€æœ?
     url: /tech
     domain: www.einkframe.com
     description: Technology insights and technical discussions about ePaper displays
@@ -50,7 +50,7 @@ navigation:
     url: /about
 
 # Default category (for backward compatibility)
-default_category: tech
+default_category: product
 
 # Social links
 social:
